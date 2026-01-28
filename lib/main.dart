@@ -17,7 +17,7 @@ class EventoApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Evento',
+      title: 'Event App',
       theme: ThemeData(
         useMaterial3: true,
         scaffoldBackgroundColor: Colors.white,
