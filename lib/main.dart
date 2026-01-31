@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'homepage.dart'; // Ensure your file is named homepage.dart
+import 'login.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-    statusBarColor: Colors.transparent,
-    statusBarIconBrightness: Brightness.light, // White icons for dark background
-  ));
+  SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      statusBarIconBrightness: Brightness.light,
+    ),
+  );
   runApp(const EventoApp());
 }
 
@@ -22,11 +24,9 @@ class EventoApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
         fontFamily: 'Roboto',
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFF3B82F6),
-        ),
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF3B82F6)),
       ),
-      // Directing to SplashScreen first
+
       home: const SplashScreen(),
     );
   }
@@ -45,17 +45,13 @@ class SplashScreen extends StatelessWidget {
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [
-              Color(0xFF3B82F6),
-              Color(0xFF1E40AF),
-            ],
+            colors: [Color(0xFF3B82F6), Color(0xFF1E40AF)],
           ),
         ),
         child: Center(
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              // Logo + App Name
               Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
@@ -74,7 +70,7 @@ class SplashScreen extends StatelessWidget {
                       ],
                     ),
                     child: const Icon(
-                      Icons.confirmation_number_rounded, // Better icon for events
+                      Icons.confirmation_number_rounded,
                       color: Color(0xFF3B82F6),
                       size: 30,
                     ),
@@ -91,25 +87,21 @@ class SplashScreen extends StatelessWidget {
                   ),
                 ],
               ),
-
               const SizedBox(height: 60),
-
-              // Get Started Button
               ElevatedButton(
                 onPressed: () {
                   Navigator.pushReplacement(
                     context,
-                    MaterialPageRoute(
-                      // 👈 FIXED: Matches the class name in your homepage.dart
-                      builder: (context) => const EventoHomePage(), 
-                    ),
+                    MaterialPageRoute(builder: (context) => const LoginPage()),
                   );
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.white,
                   foregroundColor: const Color(0xFF1E40AF),
                   padding: const EdgeInsets.symmetric(
-                      horizontal: 50, vertical: 16),
+                    horizontal: 50,
+                    vertical: 16,
+                  ),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30),
                   ),
@@ -117,10 +109,7 @@ class SplashScreen extends StatelessWidget {
                 ),
                 child: const Text(
                   "Get Started",
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 ),
               ),
             ],
