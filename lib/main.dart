@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'screens/splash_screen.dart'; // Import the splash screen file
+import 'header/profile.dart';// Import the splash screen file
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
@@ -24,7 +24,7 @@ class EventoApp extends StatelessWidget {
         fontFamily: 'Roboto', 
         colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF3B82F6)),
       ),
-      home: const SplashScreen(),
+      home: const ProfilePage(),
     );
   }
 }
