@@ -8,7 +8,7 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF8FAFC), 
+      backgroundColor: const Color(0xFFF8FAFC),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -40,10 +40,10 @@ class LoginPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("Welcome Back!", 
-                      style: TextStyle(color: Colors.white, fontSize: 32, fontWeight: FontWeight.bold)),
-                    Text("Login to book your seat", 
-                      style: TextStyle(color: Colors.white70, fontSize: 16)),
+                    Text("Welcome Back!",
+                        style: TextStyle(color: Colors.white, fontSize: 32, fontWeight: FontWeight.bold)),
+                    Text("Login to book your seat",
+                        style: TextStyle(color: Colors.white70, fontSize: 16)),
                   ],
                 ),
               ),
@@ -53,7 +53,7 @@ class LoginPage extends StatelessWidget {
               padding: const EdgeInsets.all(30.0),
               child: Column(
                 children: [
-                  
+
                   TextField(
                     decoration: InputDecoration(
                       filled: true,
@@ -73,7 +73,6 @@ class LoginPage extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),
 
-                  
                   TextField(
                     obscureText: true,
                     decoration: InputDecoration(
@@ -102,7 +101,6 @@ class LoginPage extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),
 
-            
                   Container(
                     decoration: BoxDecoration(
                       boxShadow: [
@@ -115,25 +113,19 @@ class LoginPage extends StatelessWidget {
                     ),
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(0xFF1E40AF), 
+                        backgroundColor: const Color(0xFF1E40AF),
                         minimumSize: const Size(double.infinity, 60),
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
                         elevation: 0,
                       ),
-                      onPressed: () {
-                        // Navigator.pushReplacement(
-                        //   context,
-                        //   MaterialPageRoute(builder: (context) => const EventoHomePage()),
-                        // );
-                      },
-                      child: const Text("Login", 
-                        style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold)),
+                      onPressed: () {},
+                      child: const Text("Login",
+                          style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold)),
                     ),
                   ),
 
                   const SizedBox(height: 30),
 
-                
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -145,8 +137,8 @@ class LoginPage extends StatelessWidget {
                             MaterialPageRoute(builder: (context) => const RegisterPage()),
                           );
                         },
-                        child: const Text("Register Now", 
-                          style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold)),
+                        child: const Text("Register Now",
+                            style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold)),
                       ),
                     ],
                   ),
