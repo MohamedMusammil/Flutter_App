@@ -2,9 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Categories/category_detail_page.dart';
 import 'package:flutter_application_1/Header/notification.dart';
 import 'package:flutter_application_1/Header/profile.dart';
+import 'package:flutter_application_1/SettingsPage.dart';
+import 'package:flutter_application_1/explore_page.dart';
+import 'package:flutter_application_1/favourites.dart';
 import 'package:flutter_application_1/featured_events/event_details_page.dart';
 import 'package:flutter_application_1/featured_events/my_tickets_page.dart';
 import 'package:flutter_application_1/login.dart';
+import 'package:flutter_application_1/my_events_page.dart';
 
 void main() {
   runApp(
@@ -88,13 +92,25 @@ class _EventoHomePageState extends State<EventoHomePage> {
           ListTile(
             leading: const Icon(Icons.favorite_border),
             title: const Text("Favorites"),
-            onTap: () {},
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const FavouritesPage()),
+              );
+            },
           ),
           const Divider(),
           ListTile(
             leading: const Icon(Icons.settings_outlined),
             title: const Text("Settings"),
-            onTap: () {},
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const SettingsPage()),
+              );
+            },
           ),
           const Spacer(),
           ListTile(
@@ -147,7 +163,6 @@ class _EventoHomePageState extends State<EventoHomePage> {
         ],
       ),
       actions: [
-        // 1. Profile Icon (First)
         GestureDetector(
           onTap: () {
             Navigator.push(
@@ -163,19 +178,41 @@ class _EventoHomePageState extends State<EventoHomePage> {
         ),
 
         const SizedBox(width: 5),
-        IconButton(
-          icon: const Icon(Icons.notifications_none, color: Colors.black),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const NotificationsPage(),
+        Stack(
+          children: [
+            IconButton(
+              icon: const Icon(
+                Icons.notifications_none,
+                color: Colors.black,
+                size: 28,
               ),
-            );
-          },
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const NotificationsPage(),
+                  ),
+                );
+              },
+            ),
+
+            Positioned(
+              right: 8,
+              top: 8,
+              child: Container(
+                padding: const EdgeInsets.all(2),
+                decoration: BoxDecoration(
+                  color: Colors.red,
+                  borderRadius: BorderRadius.circular(10),
+                  border: Border.all(color: Colors.white, width: 1.5),
+                ),
+                constraints: const BoxConstraints(minWidth: 12, minHeight: 12),
+              ),
+            ),
+          ],
         ),
 
-        const SizedBox(width: 10), // Padding from the right edge of the screen
+        const SizedBox(width: 10),
       ],
     );
   }
@@ -505,7 +542,20 @@ class _EventoHomePageState extends State<EventoHomePage> {
         setState(() {
           _selectedIndex = index;
         });
-        if (index == 3) {
+
+        if (index == 1) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const ExplorePage()),
+          );
+        }
+
+        if (index == 2) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const MyEventsPage()),
+          );
+        } else if (index == 3) {
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => const ProfilePage()),
