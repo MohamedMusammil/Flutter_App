@@ -9,6 +9,7 @@ import 'package:flutter_application_1/featured_events/event_details_page.dart';
 import 'package:flutter_application_1/featured_events/my_tickets_page.dart';
 import 'package:flutter_application_1/login.dart';
 import 'package:flutter_application_1/my_events_page.dart';
+import 'package:flutter_application_1/ai_chat_page.dart';
 
 void main() {
   runApp(
@@ -48,6 +49,25 @@ class _EventoHomePageState extends State<EventoHomePage> {
           ],
         ),
       ),
+
+  //ai chat start
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const AIChatPage()),
+          );
+        },
+        backgroundColor: const Color(0xFF1E40AF),
+        icon: const Icon(Icons.auto_awesome, color: Colors.white),
+        label: const Text(
+          "Ask AI",
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        ),
+      ),
+
+// ai chat finisi
+
       bottomNavigationBar: _buildBottomNav(),
     );
   }
@@ -534,6 +554,8 @@ class _EventoHomePageState extends State<EventoHomePage> {
     );
   }
 
+  
+
   // bottom
   Widget _buildBottomNav() {
     return BottomNavigationBar(
@@ -588,4 +610,5 @@ class _EventoHomePageState extends State<EventoHomePage> {
       ],
     );
   }
+
 }

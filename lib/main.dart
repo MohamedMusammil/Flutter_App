@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 import 'login.dart';
 
-void main() {
+void main() async {
+  //supa base connection - flutter pub add supabase_flutter
+  await Supabase.initialize(
+    url: "https://vvciaqpbxjmxszykvoar.supabase.co",
+    anonKey: "sb_publishable_hGjdAcStKBHqy9c59f6AHw_KHIkZh46",
+    );
+
+
   WidgetsFlutterBinding.ensureInitialized();
 
   SystemChrome.setSystemUIOverlayStyle(
