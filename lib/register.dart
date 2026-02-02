@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'login.dart';
 
 class RegisterPage extends StatelessWidget {
   const RegisterPage({super.key});
@@ -6,22 +7,23 @@ class RegisterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF8FAFC),
+      backgroundColor: const Color(0xFFF8FAFC), 
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-
+            
             Container(
               height: 280,
               width: double.infinity,
               decoration: const BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/register.jpg'),
+                  
+                  image: AssetImage('assets/register.jpg'), 
                   fit: BoxFit.cover,
                 ),
                 borderRadius: BorderRadius.only(
-                  bottomRight: Radius.circular(60),
+                  bottomRight: Radius.circular(60), 
                 ),
               ),
               child: Container(
@@ -56,7 +58,7 @@ class RegisterPage extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
               child: Column(
                 children: [
-
+               
                   TextField(
                     decoration: InputDecoration(
                       filled: true,
@@ -75,6 +77,7 @@ class RegisterPage extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),
 
+              
                   TextField(
                     decoration: InputDecoration(
                       filled: true,
@@ -93,6 +96,7 @@ class RegisterPage extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),
 
+               
                   TextField(
                     obscureText: true,
                     decoration: InputDecoration(
@@ -112,6 +116,7 @@ class RegisterPage extends StatelessWidget {
                   ),
                   const SizedBox(height: 40),
 
+               
                   Container(
                     decoration: BoxDecoration(
                       boxShadow: [
@@ -130,6 +135,7 @@ class RegisterPage extends StatelessWidget {
                         elevation: 0,
                       ),
                       onPressed: () {
+                    
                         Navigator.pop(context);
                       },
                       child: const Text(
@@ -141,6 +147,7 @@ class RegisterPage extends StatelessWidget {
 
                   const SizedBox(height: 20),
 
+                
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
