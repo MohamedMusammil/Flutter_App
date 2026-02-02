@@ -1,27 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-<<<<<<< HEAD
-import 'header/profile.dart';
+import 'Header/profile.dart';
 import 'login.dart';
 import 'register.dart';
 
 void main() {
-  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-    statusBarColor: Colors.transparent,
-    statusBarIconBrightness: Brightness.dark,
-  ));
-=======
-import 'login.dart';
-
-void main() {
   WidgetsFlutterBinding.ensureInitialized();
+
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
       statusBarIconBrightness: Brightness.light,
     ),
   );
->>>>>>> 0d76b55443cd55fdde52952114cb1bfaf933b39a
+
   runApp(const EventoApp());
 }
 
@@ -35,29 +27,20 @@ class EventoApp extends StatelessWidget {
       title: 'Eventaa',
       theme: ThemeData(
         useMaterial3: true,
-<<<<<<< HEAD
         scaffoldBackgroundColor: Colors.white,
-=======
->>>>>>> 0d76b55443cd55fdde52952114cb1bfaf933b39a
         fontFamily: 'Roboto',
         colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF3B82F6)),
       ),
 
-<<<<<<< HEAD
-      // Set only ONE starting page
-      home: const LoginPage(),
+      // Start with Splash Screen
+      home: const SplashScreen(),
 
-      // Define routes for navigation
+      // Keep routes for navigation
       routes: {
         '/login': (context) => const LoginPage(),
         '/register': (context) => const RegisterPage(),
         '/profile': (context) => const ProfilePage(),
       },
-    );
-  }
-}
-=======
-      home: const SplashScreen(),
     );
   }
 }
@@ -149,4 +132,3 @@ class SplashScreen extends StatelessWidget {
     );
   }
 }
->>>>>>> 0d76b55443cd55fdde52952114cb1bfaf933b39a
