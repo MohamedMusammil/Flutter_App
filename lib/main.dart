@@ -9,7 +9,7 @@ void main() async {
     url: "https://vvciaqpbxjmxszykvoar.supabase.co",
     anonKey: "sb_publishable_hGjdAcStKBHqy9c59f6AHw_KHIkZh46",
     );
-
+ 
 
   WidgetsFlutterBinding.ensureInitialized();
 
